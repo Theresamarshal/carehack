@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Touch Palette custom colors */
+  --canvas-bg: hsl(220, 25%, 8%);
+  --control-bg: hsl(210, 40%, 98%);
+  --primary-purple: hsl(262, 83%, 66%);
+  --soft-gray: hsl(218, 11%, 46%);
+  --pastel-pink: hsl(338, 77%, 95%);
+  --pastel-blue: hsl(213, 94%, 93%);
+  --pastel-green: hsl(142, 76%, 91%);
+  --pastel-yellow: hsl(46, 87%, 90%);
+  --glow-purple: hsl(262, 83%, 66%);
+  --glow-pink: hsl(320, 75%, 65%);
+  --glow-blue: hsl(210, 85%, 65%);
+  --glow-green: hsl(142, 75%, 65%);
+  --glow-green: hsl(142, 75%, 65%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .canvas-bg {
+    background-color: var(--canvas-bg);
+  }
+  
+  .control-bg {
+    background-color: var(--control-bg);
+  }
+  
+  .primary-purple {
+    background-color: var(--primary-purple);
+  }
+  
+  .soft-gray {
+    color: var(--soft-gray);
+  }
+  
+  .pastel-pink {
+    background-color: var(--pastel-pink);
+  }
+  
+  .pastel-blue {
+    background-color: var(--pastel-blue);
+  }
+  
+  .pastel-green {
+    background-color: var(--pastel-green);
+  }
+  
+  .pastel-yellow {
+    background-color: var(--pastel-yellow);
+  }
+}
+
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .canvas-bg {
+    background: linear-gradient(135deg, hsl(220, 25%, 8%) 0%, hsl(230, 20%, 10%) 25%, hsl(240, 15%, 12%) 50%, hsl(250, 20%, 9%) 75%, hsl(260, 25%, 7%) 100%);
+  }
+  
+  .magical-glow {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+    animation: magicalPulse 3s ease-in-out infinite;
+  }
+  
+  .shape-spawn {
+    animation: shapeSpawn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .shape-bounce {
+    animation: shapeBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .particle-burst {
+    animation: particleBurst 1.2s ease-out;
+  }
+  
+  .rainbow-shimmer {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #ffa07a, #98d8c8, #f7dc6f);
+    background-size: 400% 400%;
+    animation: rainbowShimmer 3s ease infinite;
+  }
+  
+  .glow-ring {
+    position: relative;
+  }
+  
+  .glow-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, var(--glow-purple), var(--glow-pink), var(--glow-blue), var(--glow-green));
+    background-size: 400% 400%;
+    opacity: 0.7;
+    filter: blur(8px);
+    animation: glowRing 2s linear infinite;
+    z-index: -1;
+  }
+  
+  .floating-sparkles {
+    position: relative;
+    overflow: visible;
+  }
+  
+  .floating-sparkles::after {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 20px;
+    animation: sparkleFloat 2s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  .ripple-effect {
+    animation: ripple 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .control-hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .control-hover:hover {
+    transform: translateY(-4px) scale(1.05);
+    filter: brightness(1.1);
+  }
+  
+  .control-hover:active {
+    transform: translateY(-1px) scale(0.98);
+    transition: all 0.1s ease;
+  }
+  
+  @keyframes magicalPulse {
+    0%, 100% {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 50px rgba(139, 92, 246, 0.6), 0 0 100px rgba(139, 92, 246, 0.3);
+    }
+  }
+  
+  @keyframes shapeSpawn {
+    0% {
+      transform: scale(0) rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.3) rotate(180deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes shapeBounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.25); }
+    60% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes particleBurst {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes rainbowShimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes glowRing {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes sparkleFloat {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-10px) rotate(180deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) rotate(-10deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(239, 68, 68, 0.7);
+    }
+  }
+}
